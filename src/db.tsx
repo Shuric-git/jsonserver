@@ -2,7 +2,7 @@
 
 export class db {
 
-  private static _baseUrl: string = 'https://jsonserver-shuric-git.vercel.app/'
+  private static _baseUrl: string = 'https://json-kg.herokuapp.com/api'
 
   static async getUsers(page: number) {
     let res = await fetch(`${this._baseUrl}users?_limit=5&_page=${page}`)
