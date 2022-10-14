@@ -2,7 +2,7 @@
 
 export class db {
 
-  private static _baseUrl: string = 'http://localhost:3001/'
+  private static _baseUrl: string = 'https://jsonserver-shuric-git.vercel.app/'
 
   static async getUsers(page: number) {
     let res = await fetch(`${this._baseUrl}users?_limit=5&_page=${page}`)
