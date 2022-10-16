@@ -48,12 +48,27 @@ function App() {
   }
 
   function pageRenderer() {
+    let pages = [];
+    for (let i = 1; i <= maximumPage; i++) {
+      pages.push(i)
+    }
+    let renderedPageNumbers = pages.map((item, index) => {
+      return (
+        <div
+          key={index}
+          className='pageNumber'
+          onClick={() => setPage(item)}
+        >
+          {item}
+        </div>
+      )
+    })
     if (data.length < 4 && page === 1) return null
     if (page === 1) {
       return (
         <>
           <PrevBtn disable={true} decPage={setPage} />
-          <span>{page}</span>
+          <div className='pageNumbersWrapper'>{renderedPageNumbers}</div>
           <NextBtn disable={false} incPage={setPage}/>
 
         </>)
@@ -61,7 +76,7 @@ function App() {
       return (
         <>
           <PrevBtn disable={false} decPage={setPage} />
-          <span>{page}</span>
+          <div className='pageNumbersWrapper'>{renderedPageNumbers}</div>
           <NextBtn disable={true} incPage={setPage}/>
         </>
       )
@@ -69,7 +84,7 @@ function App() {
       return (
         <>
           <PrevBtn disable={false} decPage={setPage} />
-          <span>{page}</span>
+          <div className='pageNumbersWrapper'>{renderedPageNumbers}</div>
           <NextBtn disable={false} incPage={setPage}/>
         </>
       )

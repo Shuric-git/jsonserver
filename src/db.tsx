@@ -1,7 +1,7 @@
 export class db {
 
   private static _baseUrl: string = 'https://json-kg.herokuapp.com/api/'
-  // private static _baseUrl: string = isDev() ? 'http://localhost:3001/' : 'https://json-kg.herokuapp.com/api/'
+  // 'http://localhost:3001/' : 'https://json-kg.herokuapp.com/api/'
 
   static async getUsers(start: number, end: number, sort: any, searchValue: string) {
     let res = await fetch(`${this._baseUrl}users?_start=${start}&_end=${end}&_order=${sort['order'][sort['option']]}&_sort=${sort['option']}&q=${searchValue}`)
