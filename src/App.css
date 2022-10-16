@@ -8,25 +8,72 @@
 
 .table {
   width: 80%;
-  border: 1px solid gray;
+  border-bottom: 1px solid gray;
   border-collapse: collapse;
   margin-bottom: 20px;
+  min-height: 330px;
 }
 
-.table td, .table th {
-  border: 1px solid gray;
+.table th {
+  background-color: #ff7f30;
+  color: #ffffff;
+  font-weight: 400;
+  height: 30px;
   padding: 5px;
+  cursor: pointer;
+}
+
+.table td {
+  border-bottom: 1px solid gray;
+  padding: 10px;
+  text-align: center;
+  width: 14%;
+}
+
+.table th:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.table th:last-child {
+  border-radius: 0 5px 5px 0;
 }
 
 .button-wrapper {
   display: block;
+  width: 140px;
 }
 
 .button-wrapper button {
   margin: 10px;
+  padding: 5px 7px 5px 6px;
+  background-color: #49a2f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-wrapper button:disabled {
+  pointer-events: none;
+  opacity: 50%;
 }
 
 .search {
   display: flex;
   margin-bottom: 20px;
+}
+
+.search input {
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.clearBtn, .searchBtn {
+  margin-left: 10px;
+  padding: 5px 7px 5px 6px;
+  background-color: #49a2f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
